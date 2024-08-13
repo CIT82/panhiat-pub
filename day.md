@@ -1,4 +1,4 @@
-# Daily Mornings Routine with My Kids
+# Daily Morning Routine with My Kids
 
 I enjoy waking up at 7 A.M. 
 
