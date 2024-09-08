@@ -33,4 +33,7 @@ Offset is when you want to move the columns. to the right. To offset a column th
 
 Breakpoint
 
-Breakpoint is where you want to change the layout on certain type of device such as large, extra large or small device. By identifying the breakpoint, it helps define the different grid style you want. 
+Breakpoint is where you want to change the layout on certain type of device such as large, extra large or small device. By identifying the breakpoint, it helps define the different grid style you want. To use breakpoints you need to use it at the default class
+
+> 
+    row-cols-lg-4
