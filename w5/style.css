@@ -1,0 +1,92 @@
+
+
+body::before {
+    content: "XS";
+    color: red;
+    
+    font-size: 2rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: comic san ms, cursive;
+}
+
+
+
+.nav, footer {
+    font-size: 2em;
+    
+}
+
+@media (min-width: 576px) {
+    body::before {
+        content: "SM";
+    }
+}
+@media (min-width: 768px) {
+    body::before {
+        content: "MD";
+    }
+}
+
+@media (min-width: 992px) {
+    body::before {
+        content: "LG";
+    }
+}
+
+@media (min-width: 1200px) {
+    body::before {
+        content: "XL";
+    }
+}
+
+@media (min-width: 1400px) {
+    body::before {
+        content: "XXL";
+    }
+}
+
+header, footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #4d194d;
+    
+}
+
+main {
+    width: 100vw;
+    height: 70vh;
+    background-color: #212f45;
+    color: white;
+    border: 1rem solid #006466;
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    color: white;
+}
+
+.col-sm {
+    background-color: rgba(162, 176, 199, 0.1);
+    border-radius: 10%;
+    
+}
+
+.col-sm-4, .col-sm-2 {
+    font-size: 1.7em;
+    
+}
