@@ -210,40 +210,40 @@ function resetCards() {
 
 // **** phonic js*****
 
-  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    let currentLetter = '';
-    let score = 0;
+  // const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  //   let currentLetter = '';
+  //   let score = 0;
 
-    const letterDisplay = document.getElementById('letterDisplay');
-    const scoreDisplay = document.getElementById('score');
-    const restartBtn = document.getElementById('restartBtn');
+  //   const letterDisplay = document.getElementById('letterDisplay');
+  //   const scoreDisplay = document.getElementById('score');
+  //   const restartBtn = document.getElementById('restartBtn');
 
-    // Function to pick a random letter
-    function generateRandomLetter() {
-      const randomIndex = Math.floor(Math.random() * alphabet.length);
-      currentLetter = alphabet[randomIndex];
-      letterDisplay.textContent = currentLetter;
-    }
+  //   // Function to pick a random letter
+  //   function generateRandomLetter() {
+  //     const randomIndex = Math.floor(Math.random() * alphabet.length);
+  //     currentLetter = alphabet[randomIndex];
+  //     letterDisplay.textContent = currentLetter;
+  //   }
 
-    // Function to handle key press
-    function handleKeyPress(event) {
-      const pressedKey = event.key.toUpperCase();
-      if (pressedKey === currentLetter) {
-        score++;
-        scoreDisplay.textContent = score;
-        generateRandomLetter();
-      }
-    }
+  //   // Function to handle key press
+  //   function handleKeyPress(event) {
+  //     const pressedKey = event.key.toUpperCase();
+  //     if (pressedKey === currentLetter) {
+  //       score++;
+  //       scoreDisplay.textContent = score;
+  //       generateRandomLetter();
+  //     }
+  //   }
 
-    // Restart the game
-    restartBtn.addEventListener('click', () => {
-      score = 0;
-      scoreDisplay.textContent = score;
-      generateRandomLetter();
-    });
+  //   // Restart the game
+  //   restartBtn.addEventListener('click', () => {
+  //     score = 0;
+  //     scoreDisplay.textContent = score;
+  //     generateRandomLetter();
+  //   });
 
-    // Initialize the game
-    generateRandomLetter();
+  //   // Initialize the game
+  //   generateRandomLetter();
 
-    // Listen for key presses
-    document.addEventListener('keydown', handleKeyPress);
+  //   // Listen for key presses
+  //   document.addEventListener('keydown', handleKeyPress);
