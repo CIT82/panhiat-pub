@@ -42,9 +42,7 @@
     <button id="restartBtn" class="btn btn-primary mt-3 d-block mx-auto">Restart Game</button>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Phonic game code here
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     let currentLetter = '';
     let score = 0;
@@ -78,12 +76,12 @@
     });
 
     // Initialize the game
-    window.addEventListener('load', () => {
-      generateRandomLetter();
-    });
+    generateRandomLetter();
 
     // Listen for key presses
     document.addEventListener('keydown', handleKeyPress);
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
