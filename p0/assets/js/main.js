@@ -247,3 +247,81 @@ function resetCards() {
 
   //   // Listen for key presses
   //   document.addEventListener('keydown', handleKeyPress);
+
+
+
+
+
+
+
+
+  /*----------------------------------- */
+/*********************************************** */
+/* This is writing.html js */
+
+(function() {
+  // Array of questions and answers
+  const gameQuestions = [
+      { hint: "This is a color of the sky.", answer: "blue" },
+      { hint: "This is a fruit that is yellow.", answer: "banana" },
+      { hint: "This is a vehicle with four wheels.", answer: "car" },
+      { hint: "This is a pet that barks.", answer: "dog" },
+      { hint: "This is the opposite of cold.", answer: "hot" },
+      { hint: "This is something you sleep on.", answer: "bed" },
+      { hint: "This is a color of grass.", answer: "green" },
+      { hint: "This is something you wear on your feet.", answer: "shoes" },
+      { hint: "This is what you eat in the morning.", answer: "breakfast" },
+      { hint: "This is a shape with 3 sides.", answer: "triangle" }
+  ];
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  const hintElement = document.getElementById("hint");
+  const userInputElement = document.getElementById("userInput");
+  const resultElement = document.getElementById("solve");
+  const submitButton = document.getElementById("submitAnswer");
+
+  // Function to check the answer
+  function checkAnswer() {
+      const userAnswer = userInputElement.value.toLowerCase();
+      const correctAnswer = gameQuestions[currentQuestionIndex].answer;
+
+      if (userAnswer === correctAnswer) {
+          score++;
+          resultElement.textContent = "Correct! Great job!";
+          resultElement.style.color = "green";
+      } else {
+          resultElement.textContent = `Oops! The correct answer was: ${correctAnswer}`;
+          resultElement.style.color = "red";
+      }
+
+      // Move to the next question after a short delay
+      setTimeout(nextQuestion, 2000);
+  }
+
+  // Function to load the next question
+  function nextQuestion() {
+      currentQuestionIndex++;
+      userInputElement.value = ""; // Clear the input
+      resultElement.textContent = ""; // Clear the result
+
+      if (currentQuestionIndex < gameQuestions.length) {
+          hintElement.textContent = "Hint: " + gameQuestions[currentQuestionIndex].hint;
+      } else {
+          hintElement.textContent = `Game over! Your score is ${score} out of ${gameQuestions.length}`;
+          userInputElement.style.display = "none";
+          submitButton.style.display = "none";
+      }
+  }
+
+  // Event listener for the submit button
+  submitButton.addEventListener("click", checkAnswer);
+
+})();
+
+
+
+
+
+

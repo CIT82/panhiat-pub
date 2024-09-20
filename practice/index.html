@@ -1,89 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alphabet Typing Game</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .letter-display {
-      font-size: 6rem;
-      font-weight: bold;
-      color: #007bff;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .score {
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    .instructions {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preschool Word Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        #gameContainer {
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1 class="text-center mt-5">Alphabet Typing Game</h1>
-    <p class="text-center">Type the letter shown on the screen!</p>
-    <div id="letterDisplay" class="letter-display">A</div>
-    <div class="score">
-      <p>Score: <span id="score">0</span></p>
+    <h1>Preschool Word Game</h1>
+
+    <div id="gameContainer">
+        <p id="hint">Hint: This is a color of the sky.</p>
+        <input type="text" id="userInput" placeholder="Type your answer here">
+        <br>
+        <button onclick="checkAnswer()">Submit Answer</button>
+        <p id="result"></p>
     </div>
-    <div class="instructions">
-      <p>Press the corresponding key on your keyboard!</p>
-    </div>
-    <button id="restartBtn" class="btn btn-primary mt-3 d-block mx-auto">Restart Game</button>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Phonic game code here
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    let currentLetter = '';
-    let score = 0;
+    <script>
+        // Array of questions and answers
+        const questions = [
+            { hint: "This is a color of the sky.", answer: "blue" },
+            { hint: "This is a fruit that is yellow.", answer: "banana" },
+            { hint: "This is a vehicle with four wheels.", answer: "car" },
+            { hint: "This is a pet that barks.", answer: "dog" },
+            { hint: "This is the opposite of cold.", answer: "hot" },
+            { hint: "This is something you sleep on.", answer: "bed" },
+            { hint: "This is a color of grass.", answer: "green" },
+            { hint: "This is something you wear on your feet.", answer: "shoes" },
+            { hint: "This is what you eat in the morning.", answer: "breakfast" },
+            { hint: "This is a shape with 3 sides.", answer: "triangle" }
+        ];
 
-    const letterDisplay = document.getElementById('letterDisplay');
-    const scoreDisplay = document.getElementById('score');
-    const restartBtn = document.getElementById('restartBtn');
+        let currentQuestionIndex = 0;
+        let score = 0;
 
-    // Function to pick a random letter
-    function generateRandomLetter() {
-      const randomIndex = Math.floor(Math.random() * alphabet.length);
-      currentLetter = alphabet[randomIndex];
-      letterDisplay.textContent = currentLetter;
-    }
+        // Function to check the answer
+        function checkAnswer() {
+            const userAnswer = document.getElementById("userInput").value.toLowerCase();
+            const correctAnswer = questions[currentQuestionIndex].answer;
 
-    // Function to handle key press
-    function handleKeyPress(event) {
-      const pressedKey = event.key.toUpperCase();
-      if (pressedKey === currentLetter) {
-        score++;
-        scoreDisplay.textContent = score;
-        generateRandomLetter();
-      }
-    }
+            if (userAnswer === correctAnswer) {
+                score++;
+                document.getElementById("result").textContent = "Correct! Great job!";
+                document.getElementById("result").style.color = "green";
+            } else {
+                document.getElementById("result").textContent = `Oops! The correct answer was: ${correctAnswer}`;
+                document.getElementById("result").style.color = "red";
+            }
 
-    // Restart the game
-    restartBtn.addEventListener('click', () => {
-      score = 0;
-      scoreDisplay.textContent = score;
-      generateRandomLetter();
-    });
+            // Move to the next question after a short delay
+            setTimeout(nextQuestion, 2000);
+        }
 
-    // Initialize the game
-    window.addEventListener('load', () => {
-      generateRandomLetter();
-    });
+        // Function to load the next question
+        function nextQuestion() {
+            currentQuestionIndex++;
+            document.getElementById("userInput").value = ""; // Clear the input
+            document.getElementById("result").textContent = ""; // Clear the result
 
-    // Listen for key presses
-    document.addEventListener('keydown', handleKeyPress);
-  </script>
+            if (currentQuestionIndex < questions.length) {
+                document.getElementById("hint").textContent = "Hint: " + questions[currentQuestionIndex].hint;
+            } else {
+                document.getElementById("hint").textContent = `Game over! Your score is ${score} out of ${questions.length}`;
+                document.getElementById("userInput").style.display = "none";
+                document.querySelector("button").style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>
+
