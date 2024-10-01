@@ -17,3 +17,4 @@
 15. - [ x ] update course text content
 16. - [ x ] optimize images
 17. - [ x ] optimized favicon
+18. - [] tutor.html
