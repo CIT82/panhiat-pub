@@ -1,7 +1,7 @@
 # 15 things to change on index file
 
 1.  - [ x ]  Updat all images
-2.  - [] change the content in p tag
+2.  - [ x ] change the content in p tag
 3. - [x ] change profile pictures 
 4. - [x ] update headings text content
 5. - [ x ] update list item content text
@@ -15,3 +15,5 @@
 13. - [ x ] font color contrast using div (white and #29605a)
 14. - [ x ] update contact info.
 15. - [ x ] update course text content
+16. - [ x ] optimize images
+17. - [ x ] optimized favicon
