@@ -94,9 +94,7 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-
         <div class="row">
-
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
               <img src="imgs/llalogo.png" class="img-fluid" alt="Kids in class learning letters">
@@ -174,25 +172,8 @@
               </div>
             </div>
           </div> <!-- End Course Item-->
-
         </div>
-
       </div>
-
-    </section><!-- /Courses Section -->
-
-    
-
-  
-
-
-         
-          </div> <!-- End Course Item-->
-
-        </div>
-
-      </div>
-
     </section><!-- /Courses Section -->
 
   </main>
@@ -230,11 +211,11 @@
         <div class="col-lg-4 col-md-12 footer-newsletter">
           <h4>Our Newsletter</h4>
           <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
+          <form id="form" action="#" method="post" class="php-email-form">
             <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
             <div class="loading">Loading</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            <div id="msg"></div>
           </form>
         </div>
 
@@ -270,6 +251,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/subscribe.js"></script>
 
 </body>
 

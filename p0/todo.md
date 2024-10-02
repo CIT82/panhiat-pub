@@ -17,4 +17,6 @@
 15. - [ x ] update course text content
 16. - [ x ] optimize images
 17. - [ x ] optimized favicon
-18. - [] tutor.html
+18. - [x ] tutor.html
+19. - [x ] subscribe button
+20. - [x ] contact form
